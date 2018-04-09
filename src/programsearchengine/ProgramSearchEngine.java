@@ -15,29 +15,17 @@ public class ProgramSearchEngine {
 
     public static void main(String[] args) {
         try{
-            int menu=0;
-            String pil;
+            String pil = "";
             
-            while(menu==0){
+            while(!pil.equals("quit")){
                 System.out.println("##########################");
                 System.out.println("#========== MENU ========#");
                 System.out.println("#========================#");
-                System.out.println("#==Created by: M. Irvan==#");
-                System.out.println("#====== zzCOMzz =========#");
                 System.out.println("##########################");
-                System.out.println("# #");
-                System.out.println("# #");
-                System.out.println("# #");
-                System.out.println("# #");
-                System.out.println("# Web yang Dicari = #");
-                System.out.println("# #");
-                System.out.println("# #");
-                System.out.println("# #");
                 
                 pil = JOptionPane.showInputDialog("Mau Cari apa? : ");
+                if(pil.equals("quit")) break;
                 System.out.println("#############################");
-                
-                String src2 = null;
                 
                 java.awt.Desktop.getDesktop().browse(java.net.URI.create("http://"+pil));
             }

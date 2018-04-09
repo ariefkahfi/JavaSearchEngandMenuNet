@@ -27,40 +27,34 @@ public class MenuJaringan {
             Scanner masuk = new Scanner (System.in);
             
         while(menu==0){
-        System.out.println("========== By zzCOMzz ===========");
-        System.out.println("=================================");
         System.out.println("===============MENU==============");
         System.out.println("1. Perintah Shutdown");
-        System.out.println("2. Membuka www.refnaldy.itpolsri.org");
+        System.out.println("2. Google");
         System.out.println("3. Exit");
         System.out.println("=================================");
-        System.out.println("");
         System.out.println("Masukkan Pilihan Angka Pilihan Anda");
         System.out.println("Pilih = ");
         pil=masuk.nextInt();
         
         if(pil<1 || pil>3){
-            System.out.print("");
             System.out.println("Input yang Anda Masukkan Salah !!");
-        }
-        else if(pil==3){
+        }else if(pil==3){
             System.exit(0);
         }
         switch(pil){
             case 1:
                 Runtime rt = Runtime.getRuntime();
                 Process proc;
-                
                 try{
                     proc = rt.exec("CMD/C START Shutdown -s");
                 }
                 catch(Exception e){
-                    System.out.println("Sistem ga bisa mengerjakan tugas!");
+                    System.err.println("Caught an error : " +e.getMessage());
                 }
                 break;
             case 2:
                 String scr2 = null;
-            java.awt.Desktop.getDesktop().browse(java.net.URI.create("https://www.refnaldy.itpolsri.org"));
+            java.awt.Desktop.getDesktop().browse(java.net.URI.create("https://www.google.co.id"));
             break;
             
             case 3:
@@ -68,7 +62,10 @@ public class MenuJaringan {
         
         }
     }
+    
+    }catch(Exception ex){ 
+        System.out.println("Error");
     }
-catch(Exception ex){ System.out.println("Error");}
     }
+    
     }
